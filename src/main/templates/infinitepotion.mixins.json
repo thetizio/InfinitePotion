@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "com.tizio.infinitepotion.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "InfiniteModifier"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
