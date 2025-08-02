@@ -16,6 +16,7 @@ public class InfinitePotion {
     public InfinitePotion(IEventBus modEventBus, ModContainer modContainer) {
 
         LOGGER.info("Infinite Potion is loading");
+
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
     }
