@@ -1,5 +1,7 @@
 package com.tizio.infinitepotion.mixin;
 
+import com.tizio.infinitepotion.Config;
+import com.tizio.infinitepotion.interfaces.DurationInterface;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.server.level.ServerPlayer;
@@ -31,6 +33,7 @@ public class InfiniteModifier {
                 if (p_330883_.getEffect().value().isInstantenous()) {
                     p_330883_.getEffect().value().applyInstantenousEffect(player, player, entityLiving, p_330883_.getAmplifier(), 1.0);
                 } else {
+                    ((DurationInterface)p_330883_).setMultiplier(Config.DRINKMULTIPLIER.getAsDouble());
                     entityLiving.addEffect(p_330883_);
                 }
             });

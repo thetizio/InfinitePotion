@@ -3,7 +3,8 @@
   "package": "com.tizio.infinitepotion.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "InfiniteModifier"
+    "InfiniteModifier",
+    "SetDuration"
   ],
   "client": [],
   "injectors": {
