@@ -1,24 +1,19 @@
 package com.tizio.infinitepotion;
 
-import net.neoforged.fml.config.ModConfig;
+import net.fabricmc.api.ModInitializer;
+
 import org.slf4j.Logger;
-import com.mojang.logging.LogUtils;
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.ModContainer;
+import org.slf4j.LoggerFactory;
 
-@Mod(InfinitePotion.MODID)
-public class InfinitePotion {
+public class InfinitePotion implements ModInitializer {
+	public static final String MOD_ID = "infinitepotion";
 
-    public static final String MODID = "infinitepotion";
-    public static final Logger LOGGER = LogUtils.getLogger();
+	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-    public InfinitePotion(IEventBus modEventBus, ModContainer modContainer) {
+	@Override
+	public void onInitialize() {
 
-        LOGGER.info("Infinite Potion is loading");
+		LOGGER.info("Infinite Potion is loading");
 
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
-
-    }
-
+	}
 }
