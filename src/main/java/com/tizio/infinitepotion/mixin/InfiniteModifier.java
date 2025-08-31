@@ -1,5 +1,7 @@
 package com.tizio.infinitepotion.mixin;
 
+import com.tizio.infinitepotion.InfinitePotion;
+import com.tizio.infinitepotion.interfaces.DurationInterface;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.PotionContentsComponent;
@@ -32,6 +34,7 @@ public class InfiniteModifier {
 				if (((StatusEffect)effect.getEffectType().value()).isInstant()) {
 					((StatusEffect)effect.getEffectType().value()).applyInstantEffect(playerEntity, playerEntity, user, effect.getAmplifier(), (double)1.0F);
 				} else {
+					((DurationInterface)effect).setMultiplier(InfinitePotion.durationMultiplier);
 					user.addStatusEffect(effect);
 				}
 
