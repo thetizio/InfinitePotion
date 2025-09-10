@@ -1,13 +1,12 @@
 package com.tizio.infinitepotion.mixin;
 
 import com.tizio.infinitepotion.interfaces.DurationInterface;
-import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
-
-@Mixin(MobEffectInstance.class)
-public abstract class SetDuration implements DurationInterface {
+@Mixin(StatusEffectInstance.class)
+public abstract class SetDuration implements DurationInterface{
 
     @Shadow
     private int duration;
