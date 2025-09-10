@@ -1,7 +1,9 @@
 {
   "required": true,
+  "minVersion": "0.8",
   "package": "com.tizio.infinitepotion.mixin",
-  "compatibilityLevel": "JAVA_21",
+  "refmap": "mixins.infinitepotion.refmap.json",
+  "compatibilityLevel": "JAVA_17",
   "mixins": [
     "InfiniteModifier",
     "SetDuration"
