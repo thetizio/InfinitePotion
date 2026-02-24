@@ -1,11 +1,11 @@
 package com.tizio.infinitepotion;
 
 import net.fabricmc.api.ModInitializer;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class InfinitePotion implements ModInitializer {
 
@@ -19,10 +19,12 @@ public class InfinitePotion implements ModInitializer {
 		LOGGER.info("Infinite Potion is loading");
 
         try {
-            File test = new File("config/infinitepotion.txt");
-            if (!test.exists()){
+            if (!Files.exists(Path.of("config/infinitepotion.txt"))){
+                if (!Files.exists(Path.of("config"))){
+                    Files.createDirectory(Path.of("config"));
+                }
                 BufferedWriter writer = new BufferedWriter(new FileWriter("config/infinitepotion.txt"));
-                writer.write("1\n");
+                writer.write("1.0\n");
                 writer.write("Duration multiplier for potions when drank (changes require restart)\n");
                 writer.write("Value must be in range [0.1 - 100]\n");
                 writer.write("value must be at the beginning of line 1 with nothing else on that line");
