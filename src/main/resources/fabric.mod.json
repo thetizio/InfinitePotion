@@ -1,0 +1,26 @@
+{
+	"schemaVersion": 1,
+	"id": "infinitepotion",
+	"version": "${version}",
+	"name": "Infinite Potion",
+	"description": "Potions are not consumed when drank",
+	"authors": [
+		"TheTizio"
+	],
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.tizio.infinitepotion.InfinitePotion"
+		]
+	},
+	"mixins": [
+      "infinitepotion.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
